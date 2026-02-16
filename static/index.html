@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediChat – Your Biomedical AI Assistant</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>MediChat</h2>
+        <button id="new-chat-btn" title="Start New Chat">
+          <i class="fas fa-plus"></i> New Chat
+        </button>
+      </div>
+      <div class="chat-list" id="chat-list">
+      </div>
+    </aside>
+
+    <main class="main-chat">
+      <header class="chat-header">
+        <h1>Chat with Your Biomedical Assistant</h1>
+        <div class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </div>
+      </header>
+
+      <div class="chat-box" id="chat-box">
+      </div>
+
+      <div class="input-area">
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Ask a medical question…"
+          autocomplete="off"
+        />
+        <button id="send-btn" title="Send message">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

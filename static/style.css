@@ -1,0 +1,293 @@
+/* static/style.css - Updated with larger fonts */
+
+:root {
+  --bg: #0a0e17;                /* Deep cosmic dark */
+  --surface: #11151f;           /* Slightly lighter panels */
+  --text: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --user-bg: #3b82f6;           /* Strong but not aggressive blue */
+  --user-text: #ffffff;
+  --assistant-bg: #1e293b;      /* Slate for assistant messages */
+  --assistant-text: #e2e8f0;
+  --accent: #60a5fa;            /* Bright but soft blue – main action color */
+  --accent-dark: #3b82f6;
+  --border: #1e293b;
+  --sidebar-bg: #0f1420;
+  --hover: rgba(96, 165, 250, 0.12);
+  --thinking-bg: #1e293b;
+}
+
+body.light {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --text-secondary: #64748b;
+  --user-bg: #2563eb;
+  --user-text: #ffffff;
+  --assistant-bg: #f1f5f9;
+  --assistant-text: #0f172a;
+  --accent: #3b82f6;
+  --accent-dark: #1d4ed8;
+  --border: #e2e8f0;
+  --sidebar-bg: #f8fafc;
+  --hover: rgba(59, 130, 246, 0.08);
+  --thinking-bg: #f1f5f9;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+  font-size: 1.05rem;          /* ← Base font size increased */
+  line-height: 1.55;           /* Better readability */
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header h2 {
+  margin: 0 0 16px 0;
+  font-size: 1.7rem;           /* ← Bigger title */
+  color: var(--accent);
+  text-align: center;
+}
+
+#new-chat-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.05rem;          /* ← Larger button text */
+  transition: background 0.2s;
+}
+
+#new-chat-btn:hover {
+  background: var(--accent-dark);
+}
+
+.chat-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.chat-item {
+  padding: 14px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 6px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.05rem;          /* ← Larger chat titles */
+}
+
+.chat-item:hover,
+.chat-item.active {
+  background: rgba(88, 166, 255, 0.15);
+}
+
+.chat-item .title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-item .actions {
+  display: none;
+  gap: 10px;
+}
+
+.chat-item:hover .actions {
+  display: flex;
+}
+
+.chat-item .action-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 1.1rem;           /* ← Slightly larger icons */
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.chat-item .action-btn:hover {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.chat-item .rename-btn:hover {
+  color: var(--accent);
+  background: rgba(88, 166, 255, 0.1);
+}
+
+.main-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 16px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 1.7rem;           /* ← Bigger header title */
+  color: var(--accent);
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.chat-box {
+  flex: 1;
+  padding: 28px 24px;          /* ← More comfortable padding */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;                   /* ← Bigger gap between messages */
+}
+
+.message {
+  max-width: 78%;
+  padding: 14px 18px;          /* ← Slightly larger padding */
+  border-radius: 18px;
+  line-height: 1.55;
+  position: relative;
+  font-size: 1.1rem;           /* ← Larger message text */
+}
+
+.user {
+  align-self: flex-end;
+  background: var(--user-bg);
+  color: var(--user-text);
+  border-bottom-right-radius: 4px;
+}
+
+.assistant {
+  align-self: flex-start;
+  background: var(--assistant-bg);
+  color: var(--assistant-text);
+  border-bottom-left-radius: 4px;
+}
+
+.timestamp {
+  font-size: 0.85rem;          /* ← Larger timestamp (was 0.73rem) */
+  opacity: 0.7;
+  margin-top: 8px;
+}
+
+.user .timestamp {
+  text-align: right;
+}
+
+.assistant .timestamp {
+  text-align: left;
+}
+
+.input-area {
+  padding: 18px 24px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 14px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 16px 22px;          /* ← Bigger input padding */
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1.1rem;           /* ← Larger input font */
+}
+
+#user-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.2);
+}
+
+#user-input::placeholder {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+#send-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;           /* ← Slightly bigger icon */
+  transition: all 0.2s;
+}
+
+#send-btn:hover {
+  background: var(--accent-dark);
+  transform: scale(1.08);
+}
+
+/* Thinking indicator */
+.thinking {
+  align-self: flex-start;
+  background: var(--assistant-bg);
+  padding: 14px 18px;
+  border-radius: 18px;
+  max-width: 78%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-style: italic;
+  opacity: 0.85;
+  font-size: 1.1rem;
+}

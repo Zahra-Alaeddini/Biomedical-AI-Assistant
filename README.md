@@ -209,12 +209,6 @@ Benchmark: 20 representative biomedical queries
 |**Hallucination Penalty**|0.0|
 |**Uncertainty**|0.019|
 |**Confidence**|0.981|
----
-## 👩‍💻 Founder
-
-- **Zahra Alaeddini**
-- Biomedical AI Researcher
-- Adaptive Neuro-Symbolic Systems
 
 ---
 ## 📬 Contact

@@ -149,31 +149,6 @@ Metrics used for each answer:
 
 ---
 
-## 🏥 Startup Use Case & Market Fit
-
-**Targets:**
-
-- Private clinics & hospitals  
-- Biotech & pharma research teams  
-- Digital health platforms  
-- Medical education & research labs  
-
-**Value Proposition:**
-
-- Clinically grounded, measurable confidence  
-- Self-learning, improving AI over time  
-- Configurable & deployable in secure on-premise environments  
-- Scalable for multiple clinical domains  
-
-**Revenue Opportunities:**
-
-- API licensing for AI-assisted diagnostics  
-- White-labeled clinical assistants  
-- Research-grade AI subscription for hospitals & labs  
-- AI-backed drug repurposing & literature insights  
-
----
-
 ## 🧱 Tech Stack
 
 - FAISS + HuggingFace embeddings (dense retrieval)  

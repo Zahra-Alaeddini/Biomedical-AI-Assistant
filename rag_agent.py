@@ -186,7 +186,7 @@ class HebbianNeuroGraphBrain:
                 logging.info(f"Loaded Hebbian graph: {len(self.memory_graph.nodes)} nodes")
             except Exception as e:
                 logging.warning(f"Graph load failed: {e}")
-                self.memory_graph = nx.DiGraph()  # fallback به گراف خالی
+                self.memory_graph = nx.DiGraph()  
 
         if os.path.exists(AGENT_STATE_PATH):
             try:
